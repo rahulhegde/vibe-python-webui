@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=61.2"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vibe-python-webui"
+version = "0.1.0"
+description = "A small FastAPI and ECharts web UI for learning purposes"
+requires-python = ">=3.10"
+dependencies = [
+    "fastapi==0.141.1",
+    "gunicorn==26.2.0",
+]
+
+[tool.setuptools]
+include-package-data = false
+
+[tool.setuptools.packages.find]
+include = ["app"]
+namespaces = false
+
+[tool.setuptools.data-files]
+"share/vibe-python-webui" = ["README.md"]
+
+[tool.setuptools.package-data]
+app = ["static/*", "static/**/*"]
